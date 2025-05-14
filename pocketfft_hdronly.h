@@ -57,6 +57,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define POCKETFFT_CACHE_SIZE 0
 #endif
 
+/* stringify helper ------------------------------------------------------- */
+#define STR_HELPER(x)  #x          /* "x"  without expanding x            */
+#define STR(x)         STR_HELPER(x)  /* expand x first, _then_ stringify */
+
+/* compile-time print-out ------------------------------------------------- */
+#pragma message("POCKETFFT_CACHE_SIZE = " STR(POCKETFFT_CACHE_SIZE))
+
 #include <cmath>
 #include <cstdlib>
 #include <cstddef>

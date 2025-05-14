@@ -41,11 +41,15 @@ int main()
   {
   for (size_t len=1; len<8192; ++len)
     {
+    //using shape_t = std::vector<size_t>;
+    //using stride_t = std::vector<ptrdiff_t>; 
+    //ptrdiff_t is the signed integer type of the result of subtracting two pointers. 
     shape_t shape{len};
     stride_t stridef(shape.size()), strided(shape.size()), stridel(shape.size());
     size_t tmpf=sizeof(complex<float>),
            tmpd=sizeof(complex<double>),
            tmpl=sizeof(complex<long double>);
+           
     for (int i=shape.size()-1; i>=0; --i)
       {
       stridef[i]=tmpf;
